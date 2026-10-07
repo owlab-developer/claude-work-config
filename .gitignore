@@ -1,0 +1,20 @@
+# Shared Claude config: ignore everything, then list what the team shares.
+# Accounts, tokens, history, memory and caches stay local by design.
+/*
+!/.gitignore
+!/README.md
+!/CLAUDE.md
+!/settings.json
+!/agents/
+!/commands/
+!/skills/
+
+# own git repo, cloned separately (has its own update check)
+/skills/prototype-kit/
+
+# personal additions, imported from CLAUDE.md
+/CLAUDE.personal.md
+
+.DS_Store
+__pycache__/
+*.pyc
