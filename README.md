@@ -9,7 +9,7 @@ Clone into your Claude config folder: `~/.claude` (plain Claude) or a separate o
 `CLAUDE_CONFIG_DIR`). If the folder already exists, move it aside first and copy your local files back.
 
 ```bash
-git clone <this-repo-url> ~/.claude
+git clone https://github.com/owlab-developer/claude-work-config.git ~/.claude
 git clone https://github.com/vlitvinenko97/prototype-kit.git ~/.claude/skills/prototype-kit
 ```
 
