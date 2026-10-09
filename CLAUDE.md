@@ -54,6 +54,7 @@ with `wordpress-router` — it classifies the repo (`wp-project-triage`) and rou
 - `wp-phpstan` — PHPStan setup and fixes for themes / plugins.
 - Block route only: `wp-block-development` (block.json, dynamic render), `wp-block-themes` (theme.json, templates),
   `wp-interactivity-api` (`data-wp-*` directives), `wp-patterns`.
+- Demos without hosting: `wp-playground` (run / share a Playground site), `blueprint` (Playground Blueprint JSON).
 
 No skill covers classic PHP themes + ACF or Polylang — those conventions live in the project's `CLAUDE.md`.
 
