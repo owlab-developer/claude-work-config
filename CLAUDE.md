@@ -43,8 +43,21 @@ Visual skills never override the project's tokens or components.
 
 ## WordPress skills: when to use them
 
-Official skills from `WordPress/agent-skills`. In a WordPress project (theme, plugin, `wp-content`, WP site repo) start
-with `wordpress-router` — it classifies the repo (`wp-project-triage`) and routes to the skill below:
+**Use them automatically — never ask — whenever the context shows the work is about WordPress:** the repo or folder
+has `wp-config.php`, `wp-content/`, a theme `style.css` header, `functions.php`, a plugin header, `theme.json`,
+`block.json`, `.wp-env.json`, `wp-cli.yml` or WPackagist in `composer.json`; the code uses WP APIs (`add_action`,
+`WP_Query`, `register_rest_route`, `get_field`…); or the user mentions WordPress / WP / Gutenberg / ACF / Polylang /
+WooCommerce / WP-CLI, or a site to build on or move to WordPress. This covers planning, research, estimates and
+reviews too, not only writing code: plans and advice follow the same rules the skills set.
+
+- Start each WordPress task with `wordpress-router` (repo classification via `wp-project-triage`), then load every
+  skill below that matches the task — several at once when the task spans them.
+- Rules from these skills apply even when a skill isn't loaded: escape late / sanitize early, nonces + capabilities,
+  `$wpdb->prepare()`, enqueue assets (never echo `<script>` / `<style>`), translatable strings, core APIs first.
+- Frontend rules above still apply to theme HTML / CSS / JS (Web Interface Guidelines, `modern-javascript-patterns`).
+- **Priority:** the project's `CLAUDE.md` (its architecture, stack, plugins, conventions) wins over a skill's defaults.
+
+Official skills from `WordPress/agent-skills`:
 - `wp-plugin-development` — hooks, data storage, settings, security (nonces, capabilities, sanitize early / escape
   late, prepared queries). Also for a classic theme's `functions.php` / `inc/*` and mu-plugins.
 - `wp-rest-api` — custom endpoints: `register_rest_route`, argument schema, `permission_callback`, response shape.
@@ -55,8 +68,9 @@ with `wordpress-router` — it classifies the repo (`wp-project-triage`) and rou
 - Block route only: `wp-block-development` (block.json, dynamic render), `wp-block-themes` (theme.json, templates),
   `wp-interactivity-api` (`data-wp-*` directives), `wp-patterns`.
 - Demos without hosting: `wp-playground` (run / share a Playground site), `blueprint` (Playground Blueprint JSON).
-- `wp-guard` (amElnagdy/guard-skills) — **always** a guard pass after writing or changing WordPress PHP, before
-  showing it: escaping, sanitizing, nonces + capabilities, prepared queries, translatable strings, query/caching.
+- `wp-guard` (amElnagdy/guard-skills) — **always, without being asked,** a guard pass after writing or changing
+  WordPress PHP, before showing or committing it: escaping, sanitizing, nonces + capabilities, prepared queries,
+  translatable strings, query/caching.
   Known exception: a public form endpoint (booking, contact) can't check capabilities — `permission_callback` may be
   `__return_true` when the route verifies a nonce + Turnstile/honeypot + rate limit and only creates private data.
 
