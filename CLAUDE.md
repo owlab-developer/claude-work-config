@@ -41,6 +41,22 @@ The `prototype-kit` skill (`~/.claude/skills/prototype-kit/`) provides the proto
 **Priority:** a project design system (e.g. `ds/CONTRACT.md`) and the prototype-kit rules always win over any skill.
 Visual skills never override the project's tokens or components.
 
+## WordPress skills: when to use them
+
+Official skills from `WordPress/agent-skills`. In a WordPress project (theme, plugin, `wp-content`, WP site repo) start
+with `wordpress-router` — it classifies the repo (`wp-project-triage`) and routes to the skill below:
+- `wp-plugin-development` — hooks, data storage, settings, security (nonces, capabilities, sanitize early / escape
+  late, prepared queries). Also for a classic theme's `functions.php` / `inc/*` and mu-plugins.
+- `wp-rest-api` — custom endpoints: `register_rest_route`, argument schema, `permission_callback`, response shape.
+- `wp-wpcli-and-ops` — WP-CLI: content seeding, db export/import, safe search-replace between environments.
+- `wp-env` — local WordPress in Docker (`@wordpress/env`).
+- `wp-performance` — backend profiling: WP-CLI profile/doctor, Query Monitor, autoloaded options, object cache.
+- `wp-phpstan` — PHPStan setup and fixes for themes / plugins.
+- Block route only: `wp-block-development` (block.json, dynamic render), `wp-block-themes` (theme.json, templates),
+  `wp-interactivity-api` (`data-wp-*` directives), `wp-patterns`.
+
+No skill covers classic PHP themes + ACF or Polylang — those conventions live in the project's `CLAUDE.md`.
+
 ## Personal additions
 
 Personal, not shared rules live in `CLAUDE.personal.md` next to this file (gitignored):

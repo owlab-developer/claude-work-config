@@ -12,6 +12,7 @@ The skills in `skills/` are copies of open-source skills, redistributed under th
 | `ui-ux-pro-max` | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT | Copyright (c) 2024 Next Level Builder |
 | `modern-javascript-patterns` | [wshobson/agents](https://github.com/wshobson/agents) | MIT | Copyright (c) 2024 Seth Hobson |
 | `review-animations` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | MIT | Copyright (c) 2026 Emil Kowalski |
+| `wordpress-router`, `wp-project-triage`, `wp-plugin-development`, `wp-rest-api`, `wp-wpcli-and-ops`, `wp-env`, `wp-performance`, `wp-phpstan`, `wp-block-development`, `wp-block-themes`, `wp-interactivity-api`, `wp-patterns` | [WordPress/agent-skills](https://github.com/WordPress/agent-skills) (commit `3cf7f6f`, 2026-10-05) | GPL-2.0-or-later (notice in each skill's `LICENSE.txt`) | Copyright (C) 2026 WordPress Contributors |
 
 ## MIT License
 
