@@ -55,6 +55,10 @@ with `wordpress-router` — it classifies the repo (`wp-project-triage`) and rou
 - Block route only: `wp-block-development` (block.json, dynamic render), `wp-block-themes` (theme.json, templates),
   `wp-interactivity-api` (`data-wp-*` directives), `wp-patterns`.
 - Demos without hosting: `wp-playground` (run / share a Playground site), `blueprint` (Playground Blueprint JSON).
+- `wp-guard` (amElnagdy/guard-skills) — **always** a guard pass after writing or changing WordPress PHP, before
+  showing it: escaping, sanitizing, nonces + capabilities, prepared queries, translatable strings, query/caching.
+  Known exception: a public form endpoint (booking, contact) can't check capabilities — `permission_callback` may be
+  `__return_true` when the route verifies a nonce + Turnstile/honeypot + rate limit and only creates private data.
 
 No skill covers classic PHP themes + ACF or Polylang — those conventions live in the project's `CLAUDE.md`.
 
